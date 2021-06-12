@@ -23,7 +23,7 @@ def post():
         vid.write(request.data)
 
     proc = subprocess.Popen(
-        "deepspeech --model models/output_graph.pbmm --alphabet models/alphabet.txt --lm models/lm.binary --trie models/trie --audio file.wav",
+        "deepspeech --model /home/chaitanya15/release_v0.9.0/output_graph.pbmm --scorer /home/chaitanya15/release_v0.9.0/kenlm.scorer --audio file.wav",
         shell=True, stdout=subprocess.PIPE, )
     output = proc.communicate()[0]
     print(output)
@@ -39,7 +39,7 @@ def post1():
         vid.write(request.data)
 
     proc = subprocess.Popen(
-        "deepspeech --model models/output_graph.pbmm --alphabet models/alphabet.txt --lm models/lm.binary --trie models/trie --audio file.wav",
+        "deepspeech --model /home/chaitanya15/release_v0.9.0/output_graph.pbmm --scorer /home/chaitanya15/release_v0.9.0/kenlm.scorer --audio file.wav",
         shell=True, stdout=subprocess.PIPE, )
     output = proc.communicate()[0]
     print(output)
